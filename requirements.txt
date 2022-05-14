@@ -1,0 +1,5 @@
+discordpy
+database
+datetime
+settings
+sqlalchemy

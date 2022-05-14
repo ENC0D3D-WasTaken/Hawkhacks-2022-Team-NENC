@@ -1,5 +1,3 @@
-from msilib.schema import Class
-from unicodedata import name
 from sqlalchemy import Float, Boolean, Column, DateTime, ForeignKey,String ,Integer, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base

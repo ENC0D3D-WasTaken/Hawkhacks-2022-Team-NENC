@@ -1,4 +1,6 @@
 import discord
+from datetime import datetime
+from discord import Embed
 from discord.ext import commands
 from discord.utils import get
 from database import User, CryptoCurrencies, NFTCollections, NFTCollectionItems, NFTMint,CryptoCurrencyTransactions, NFTforCryptoTrade,CryptoforNFTTrade, session as db
@@ -15,6 +17,7 @@ async def on_ready():
 
 @bot.event
 async def on_command_error(ctx, error):
+    msg = ''
     if isinstance(error, commands.CommandNotFound):
         msg = await ctx.send('Invalid Command')
     elif isinstance(error, commands.MissingRequiredArgument):
