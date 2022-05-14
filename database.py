@@ -1,6 +1,6 @@
 from msilib.schema import Class
 from unicodedata import name
-from sqlalchemy import ARRAY, Boolean, Column, DateTime, ForeignKey,String ,Integer, create_engine
+from sqlalchemy import Float, Boolean, Column, DateTime, ForeignKey,String ,Integer, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_utils import database_exists, create_database
@@ -25,6 +25,7 @@ class User(Base):
     memberId = Column(Integer,unique=True)
     name = Column(String(),unique=True)
     timestamp = Column(DateTime)
+    balance = Column(Float)
 
 class NFTCollections(Base):
     __tablename__ = 'nftcollections'
@@ -46,6 +47,7 @@ class CryptoCurrencies(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(),unique=True)
     price = Column(Integer())
+    abr = Column(String())
     quantity = Column(Integer())
     timestamp = Column(DateTime())
     
