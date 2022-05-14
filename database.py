@@ -1,4 +1,4 @@
-from sqlalchemy import Float, Boolean, Column, DateTime, ForeignKey,String ,Integer, create_engine
+from sqlalchemy import BIGINT, Float, Boolean, Column, DateTime, ForeignKey,String ,Integer, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_utils import database_exists, create_database
@@ -20,7 +20,7 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = 'userlist'
     id = Column(Integer, primary_key=True)
-    memberId = Column(Integer,unique=True)
+    memberId = Column(BIGINT,unique=True)
     name = Column(String(),unique=True)
     timestamp = Column(DateTime)
     balance = Column(Float)
