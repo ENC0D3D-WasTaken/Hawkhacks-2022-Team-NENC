@@ -1,6 +1,6 @@
 from main import *
 
-@bot.command(aliases=['JOIN', 'j', 'J'])
+@bot.command(aliases=['REG', 'REGISTER', 'r', 'R'])
 async def join(ctx):
     user = ctx.message.author
     query = db.query(User).filter(User.memberId == user.id).first()

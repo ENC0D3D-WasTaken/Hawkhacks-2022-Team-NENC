@@ -8,7 +8,7 @@ from random import randint,random
 
 intents = discord.Intents().all()
 #activity = discord.Activity(type=discord.ActivityType.watching, name="Bored Apes the Movie")
-activity = discord.Game(name="Use >help to see a list of commands")
+activity = discord.Game(name="with >help for help")
 
 bot = commands.Bot(command_prefix='>',intents=intents, activity=activity, status=discord.Status.online)
 
@@ -20,7 +20,7 @@ async def on_ready():
 async def on_command_error(ctx, error):
     msg = ''
     if isinstance(error, commands.CommandNotFound):
-        msg = await ctx.send('Invalid Command')
+        msg = await ctx.send('Invalid command, Use >help to see a list of commands.')
         await deleteMessage(msg)
     elif isinstance(error, commands.MissingRequiredArgument):
         msg = await ctx.send('Missing Required Argument')
@@ -29,8 +29,8 @@ async def on_command_error(ctx, error):
 async def deleteMessage(message):
     await message.delete(delay=5)
     
-def getUser(userId):
-    user = db.query(User).filter(User.id == userId).first()
+async def getUser(userId):
+    user = db.query(User).filter(User.memberId == userId).first()
     if user is not None:
         return user
     return False
