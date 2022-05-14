@@ -20,9 +20,10 @@ async def on_command_error(ctx, error):
     msg = ''
     if isinstance(error, commands.CommandNotFound):
         msg = await ctx.send('Invalid Command')
+        await deleteMessage(msg)
     elif isinstance(error, commands.MissingRequiredArgument):
         msg = await ctx.send('Missing required argument')
-    await deleteMessage(msg)
+        await deleteMessage(msg)
     
 async def deleteMessage(message):
     await message.delete(delay=5)

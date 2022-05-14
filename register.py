@@ -10,7 +10,8 @@ async def join(ctx):
         db.commit()
         Registered = Embed(title="Successfully Registered", description=f"{user.name}, you have been successfully registered.", color=30646)
         Registered.set_image(url=user.avatar_url)
-        msg =  await ctx.send(embed=Registered)
+        msg = await ctx.send(embed=Registered)
+        await deleteMessage(msg)
     else:
         msg = await ctx.send('You are already a part of the tycoon, {user.name}.')
-    await deleteMessage(msg)
+        await deleteMessage(msg)
