@@ -1,4 +1,4 @@
-from sqlalchemy import BIGINT, Float, Boolean, Column, DateTime, ForeignKey,String ,Integer, create_engine
+from sqlalchemy import ARRAY, BIGINT, Float, Boolean, Column, DateTime, ForeignKey,String ,Integer, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_utils import database_exists, create_database
@@ -52,6 +52,7 @@ class CryptoCurrencies(Base):
     price = Column(Integer())
     abr = Column(String())
     quantity = Column(Integer())
+    holders = Column(ARRAY(Integer))
     
 class CryptoCurrencyTransactions(Base):
     __tablename__ = 'cryptocurrencytransactions'
