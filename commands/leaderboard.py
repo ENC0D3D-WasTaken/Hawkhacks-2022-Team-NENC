@@ -12,12 +12,11 @@ async def leaderboard(ctx):
         bal = 0
         for i in range(len(prices)):
             if user.memberId in prices[i].holders:
-                bal +=  owned[i] * prices[i].price
+                bal += owned[i] * prices[i].price
                 print(bal) 
         if len(nfts) != 0:
             print('Buy some NFTs using >shop')
             for nft in nfts:
-                print('dasda')
                 if user.memberId == nft.holder:
                     bal += nft.mintPrice * enfixCourse
         else:
@@ -38,3 +37,4 @@ async def leaderboard(ctx):
     Leaderboard.set_thumbnail(url=f"{users[0]['url']}")
     Leaderboard.set_footer(text=f"To see yourself here by mining, buying cryptocurrency and buying NFTs.", icon_url=f"https://media.discordapp.net/attachments/974847550039416902/975237671909748736/91D132C4-287C-4723-ADC9-09BA81331692.jpeg1.png?width=567&height=567")
     await ctx.send(embed=Leaderboard)
+    #work in progress still

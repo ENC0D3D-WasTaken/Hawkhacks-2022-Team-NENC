@@ -38,7 +38,7 @@ async def mine(ctx):
             difficulty = "Medium"
         else:
             difficulty = "Hard"
-        question = Embed(title=f"How much is {num1} {operator} {num2}", description=f"{user.name}, you have been given a {difficulty} question to solve.\nThe payout for solving the question is {payout} dollars.\nIf you make a mistake you will be penalized with the same amount of money\n\n{num1} {operator} {num2} = ?", color=0x93f5e9)
+        question = Embed(title=f"How much is {num1} {operator} {num2}?", description=f"{user.name}, you have been given a {difficulty} question to solve.\nThe payout for solving the question is {payout} BSD.\nIf you make a mistake you will be penalized with the same amount of money\n\n{num1} {operator} {num2} = ?", color=0x93f5e9)
         msg = await ctx.send(embed=question)
         callback = await bot.wait_for('message', check=lambda message: message.author == ctx.message.author)
         if callback.content == str(answer):

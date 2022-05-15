@@ -33,7 +33,6 @@ async def inventory(ctx):
             pass
         currentBalanceEmbed.add_field(name="Total inventory value:", value=f"Your total inventory value is {userValue} B$D.", inline=False)
         msg = await ctx.send(embed=currentBalanceEmbed)
-        await msg.delete(delay=10)
     else:
         msg = await ctx.send(f'You are not a part of the tycoon, {user.name}.')
         await deleteMessage(msg)
