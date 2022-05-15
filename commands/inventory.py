@@ -11,7 +11,7 @@ async def inventory(ctx):
         user.vespine,
         user.xps
     ]
-    userValue = 0
+    userValue = user.balance
     prices = []
     query = db.query(CryptoCurrencies).all()
     for crypto in query:

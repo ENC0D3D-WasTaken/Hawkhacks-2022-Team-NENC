@@ -12,7 +12,6 @@ from commands.inventory import *
 from commands.leaderboard import *
 from commands.mine import *
 from commands.price import *
-from commands.rank import *
 from commands.register import *
 from commands.shop import *
 from commands.trade import *

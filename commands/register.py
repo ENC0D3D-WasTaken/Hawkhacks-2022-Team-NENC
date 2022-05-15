@@ -1,6 +1,6 @@
 from main import *
 
-@bot.command(aliases=['REG', 'r', 'R'])
+@bot.command(aliases=['REGISTER', 'REG', 'r', 'R'])
 async def register(ctx):
     await ctx.message.delete(delay=0)
     user = ctx.message.author

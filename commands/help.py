@@ -9,7 +9,7 @@ async def help(ctx):
     Help.add_field(name="`>mine`", value="'Mines' BSD by solving math problems", inline=True)
     Help.add_field(name="`>shop`", value="Allows you to buy fake NFTs", inline=True)
     Help.add_field(name="`>trade`", value="Send BSD to another user", inline=True)
-    Help.add_field(name="`>rank`", value="Shows global leaderboard for BSD balance", inline=True)
+    Help.add_field(name="`>leaderboard`", value="Shows global leaderboard for richest player", inline=True)
     Help.add_field(name="`>price`", value="Shows price of all coins", inline=True)
     Help.add_field(name="`>inventory`", value="Shows your coin balance and NFT collection", inline=True)
     Help.add_field(name="`>exchange`", value="Allows you to exchange BSD to a different coin and vice versa", inline=True)
