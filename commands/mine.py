@@ -43,12 +43,12 @@ async def mine(ctx):
         callback = await bot.wait_for('message', check=lambda message: message.author == ctx.message.author)
         if callback.content == str(answer):
             await msg.delete(delay=0)
-            msg = await ctx.send(f'{user.name}, you correctly solved the question and got rewarded {payout} dollars.')
+            msg = await ctx.send(f'{user.name}, you correctly solved the question and got rewarded {payout} BSD.')
             await deleteMessage(msg)
             user.balance += payout
         else:
             await msg.delete(delay=0)
-            msg = await ctx.send(f'{user.name}, you made mistake and got a penalty of {payout} dollars.')
+            msg = await ctx.send(f'{user.name}, you made mistake and got a penalty of {payout} BSD deducted.')
             await deleteMessage(msg)
             user.balance -= payout
         db.commit()

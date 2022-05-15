@@ -4,9 +4,15 @@ from dotenv import load_dotenv
 
 #Main imports
 from main import *
+
+from commands.about import *
+from commands.exchange import *
 from commands.help import *
 from commands.inventory import *
+from commands.leaderboard import *
 from commands.mine import *
+from commands.price import *
+from commands.rank import *
 from commands.register import *
 from commands.shop import *
 from commands.trade import *

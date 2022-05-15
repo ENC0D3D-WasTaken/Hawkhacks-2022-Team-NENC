@@ -3,13 +3,14 @@ from datetime import datetime, timezone
 from discord import Embed
 from discord.ext import commands
 from discord.utils import get
-from database import User, CryptoCurrencies, NFTCollections, NFTCollectionItems, NFTMint,CryptoCurrencyTransactions, NFTforCryptoTrade,CryptoforNFTTrade, session as db
+from database import User, CryptoCurrencies,NFTs, CryptoCurrencyTransactions, NFTforCryptoTrade,CryptoforNFTTrade, session as db
 from random import randint,random,choice
 
 intents = discord.Intents().all()
 activity = discord.Activity(type=discord.ActivityType.listening, name='>help command!')
 
 bot = commands.Bot(command_prefix='>',intents=intents, activity=activity, status=discord.Status.online, help_command=None)
+bot.remove_command("help")
 
 @bot.event
 async def on_ready():

@@ -1,4 +1,4 @@
-from sqlalchemy import ARRAY, BIGINT, Float, Boolean, Column, DateTime, ForeignKey,String ,Integer, create_engine
+from sqlalchemy import ARRAY, BIGINT, Column, DateTime, ForeignKey,String ,Integer, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_utils import database_exists, create_database
@@ -30,20 +30,16 @@ class User(Base):
     vespine = Column(Integer)
     xps = Column(Integer)
 
-class NFTCollections(Base):
-    __tablename__ = 'nftcollections'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(),unique=True)
-    description = Column(String())
-    mintPrice = Column(Integer())
-    timestamp = Column(DateTime())
 
-class NFTCollectionItems(Base):
-    __tablename__ = 'nftcollectionitems'
+class NFTs(Base):
+    __tablename__ = 'nftlist'
     id = Column(Integer, primary_key=True)
-    collectionId = Column(Integer, ForeignKey('nftcollections.id'))
     name = Column(String(),unique=True)
     timestamp = Column(DateTime())
+    holder = Column(BIGINT)
+    url = Column(String())
+    mintPrice = Column(Integer)
+    chain = Column(String(),default="enfix")
 
 class CryptoCurrencies(Base):
     __tablename__ = 'cryptocurrencylist'
@@ -52,7 +48,7 @@ class CryptoCurrencies(Base):
     price = Column(Integer())
     abr = Column(String())
     quantity = Column(Integer())
-    holders = Column(ARRAY(Integer))
+    holders = Column(ARRAY(BIGINT))
     
 class CryptoCurrencyTransactions(Base):
     __tablename__ = 'cryptocurrencytransactions'
@@ -60,12 +56,6 @@ class CryptoCurrencyTransactions(Base):
     userId = Column(Integer, ForeignKey('userlist.id'))
     cryptoId = Column(Integer, ForeignKey('cryptocurrencylist.id'))
     quantity = Column(Integer())
-    boughtFor = Column(Integer())
-    timestamp = Column(DateTime())
-
-class NFTMint(Base):
-    __tablename__ = 'nfttransactions'
-    id = Column(Integer, primary_key=True)
     boughtFor = Column(Integer())
     timestamp = Column(DateTime())
 
