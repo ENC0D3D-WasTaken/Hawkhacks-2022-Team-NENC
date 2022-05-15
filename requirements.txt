@@ -1,5 +1,6 @@
-discordpy
-database
+pip install discord.py
 datetime
-settings
 sqlalchemy
+sqlalchemy-utils
+python-dotenv
+psycopg2

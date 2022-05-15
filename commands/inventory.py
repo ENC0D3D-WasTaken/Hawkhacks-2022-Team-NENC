@@ -1,6 +1,6 @@
 from main import *
 
-@bot.command(aliases=['INV','i','I'])
+@bot.command(aliases=['INVENTORY', 'INV', 'i', 'I'])
 async def inventory(ctx):
     await ctx.message.delete(delay=0)
     user = getUser(ctx.message.author.id)
@@ -18,7 +18,7 @@ async def inventory(ctx):
         prices.append([crypto.abr,crypto.price,crypto.name])
     nfts = db.query(NFTs).filter(NFTs.holder == user.memberId).all()
     if user is not False:
-        currentBalanceEmbed = Embed(title=f"{user.name},", description=f"ㅤ", color=0x5bdef5)
+        currentBalanceEmbed = Embed(title=f"{user.name}", color=0x5bdef5)
         currentBalanceEmbed.set_thumbnail(url=f"{ctx.message.author.avatar_url}")
         currentBalanceEmbed.add_field(name="💰 Balance", value=f"Your stable currency balance is {user.balance} B$D.", inline=False)
         for i in range(len(ownedCrypto)):
