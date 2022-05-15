@@ -24,6 +24,11 @@ class User(Base):
     name = Column(String(),unique=True)
     timestamp = Column(DateTime)
     balance = Column(Integer)
+    enfix = Column(Integer)
+    catcoin = Column(Integer) 
+    ploy = Column(Integer)
+    vespine = Column(Integer)
+    xps = Column(Integer)
 
 class NFTCollections(Base):
     __tablename__ = 'nftcollections'
@@ -47,7 +52,6 @@ class CryptoCurrencies(Base):
     price = Column(Integer())
     abr = Column(String())
     quantity = Column(Integer())
-    timestamp = Column(DateTime())
     
 class CryptoCurrencyTransactions(Base):
     __tablename__ = 'cryptocurrencytransactions'

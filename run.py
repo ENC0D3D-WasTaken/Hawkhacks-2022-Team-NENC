@@ -3,9 +3,10 @@ from os import getenv
 from dotenv import load_dotenv
 
 #Main imports
-from commands.register import *
 from main import *
 from commands.mine import *
+from commands.inventory import *
+from commands.register import *
 
 load_dotenv()
 
