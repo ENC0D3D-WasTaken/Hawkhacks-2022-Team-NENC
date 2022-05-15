@@ -23,7 +23,7 @@ class User(Base):
     memberId = Column(BIGINT,unique=True)
     name = Column(String(),unique=True)
     timestamp = Column(DateTime)
-    balance = Column(Float)
+    balance = Column(Integer)
 
 class NFTCollections(Base):
     __tablename__ = 'nftcollections'
